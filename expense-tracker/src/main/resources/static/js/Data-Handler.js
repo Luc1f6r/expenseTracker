@@ -72,28 +72,18 @@ $(document).ready(function () {
             data: jsondata,
             contentType: "application/json",
            success: function (data) {
-            data.forEach(item => {
-
-                let tr = $("<tr></tr>");
-                tr.append($("<td></td>").text(item.id));
-                tr.append($("<td></td>").text(item.name));
-                tr.append($("<td></td>").text(item.amount));
-                tr.append($("<td></td>").text(item.date));
-                tr.append($("<td></td>").text(item.type));
-                tr.append($("<td></td>").text(item.PaymentMethod));
-                tr.append($("<td></td>").text(item.Category));
-                tr.append($("<td></td>").text(item.note));
-                tbody.append(tr);
-            }
-            )
-            console.log(item.id + " : " + item.name + " : " + item.amount)
-        },
-            error: function(){
+                data.forEach(item => {
+                console.log(item.id + " : " + item.name + " : " + item.amount+" : "+item.date +
+                     " : " + item.type + " : " + item.PaymentMethod+" : "+ item.Category +" : "+ item.note)
+            })
+        }
+        ,error: function(){
                 console.log("Error Occured")
-            } 
-        });
+            }
+          
+        })   
+    });
         console.log("Name", name, " \n Amount:", amount, "\n Amount type:", amounttype, "\nDate:", finaldate, "\nDate Type:", datetype, "\nType:", typeslt, "\nPayment Method: ", method)
     })
 
-})
 
